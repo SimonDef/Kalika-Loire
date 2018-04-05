@@ -932,6 +932,13 @@
 	{
 		position: relative;
 		text-align: center;
+		vertical-align: baseline;
+				display: block;
+						margin-left: auto;
+		margin-right: auto;
+		min-width: 5em;
+
+
 	}
 	
 	#footer header h2
@@ -943,6 +950,48 @@
 	{
 		color: rgba(255,255,255,.2);
 	}
+	
+	form {
+		margin: 0 0 2em 0;
+	}
+
+		form .field {
+			margin-bottom: 1.5em;
+		}
+
+			form .field.half {
+				display: inline-block;
+				width: 48%;
+			}
+
+				form .field.half.first {
+					margin-right: 3%;
+				}
+
+		@media screen and (max-width: 980px) {
+
+			form .field.half {
+				display: block;
+				width: 100%;
+			}
+
+				form .field.half.first {
+					margin-right: 0;
+				}
+
+		}
+		
+		label {
+		display: block;
+		font-size: 0.9em;
+		font-weight: 300;
+		margin: 0 0 1em 0;
+		}
+
+	#honeypot {
+  		display: none;
+		}
+		
 
 /*********************************************************************************/
 /* Copyright                                                                     */

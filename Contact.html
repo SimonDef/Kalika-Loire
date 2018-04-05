@@ -16,6 +16,11 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
+		<script>
+			if (validateHuman(data.honeypot)) {
+ 			 return false;
+			}
+		</script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -97,17 +102,48 @@
 	<!-- Footer -->
 		<div id="footer">
 			<div class="container">
-				<section>
+				<div class="row">
+				<section class="container">
 					<header>
 						<h2>Contact</h2>
-						<span class="byline">Besoin d'informations? <br><br>D'un devis? <br><br><a href="#">Contactez moi</a></span>
+						<span class="byline">Besoin d'informations?<br>D'un devis? 	<br><a href="#">Contactez moi par email</a><br><br> ou par formulaire</span>
 					</header>
+					<form id="gform" action="https://script.google.com/macros/s/AKfycby3mJKzePoGFYq2kQGfV7ET8XF4-rV8U2ajdtW-yResaEeLkzV0/exec" method="post">
+						<div class="field">
+							<input name="name" id="name" type="text" placeholder="Nom">
+						</div>
+						<div class="field half">
+							<input name="email" id="email" type="email" placeholder="Email">
+						</div>
+						<div class="field">	
+							<textarea name="object" id="object" rows ="1" placeholder="Sujet: Demande d'informations"></textarea>
+						</div>
+						<div class="field">
+							<textarea name="message" id="message" rows="6" placeholder="Votre Message, et n'oubliez pas de laisser vos coordonnées"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input value="Envoie" class="button alt" type="submit"></li>
+						</ul>
+					</form>
+					<form action="https://script.google.com/macros/s/..." method="post">
+					  <input id="honeypot" type="text" name="honeypot" value="" />
+					  <!--the rest of your form-->
+					</form>
+
+
+					  <!-- Thankyou Message People See when they submit the form: -->
+ 					 <div class="copyright" style="display:none;" id="thankyou_message">
+ 					 <h3>Merci pour votre message! <br>
+ 					 Je vous repondrai prochainement</h3>
+ 					 </div>
+					
 					<ul class="contact">
 						<li><a href="#" class="fa fa-instagram"><span>Instagram</span></a></li>
 						<li class="active"><a href="https://www.facebook.com/kalika.loire/" class="fa fa-facebook"><span>Facebook</span></a></li>
 						<li><a href="kalika.loire@gmail.com" class="fa fa-envelope-o"><span>Email</span></a></li>
 					</ul>
 				</section>
+				</div>
 			</div>
 		</div>
 
@@ -117,6 +153,8 @@
 				&copy; Design: <a href="http://templated.co">TEMPLATED</a> &copy; Images: <a>Kalika Loire</a>
 			</div>
 		</div>
-		
+	
+	<script data-cfasync="false" type="text/javascript" src="https://cdn.rawgit.com/dwyl/learn-to-send-email-via-google-script-html-no-server/master/form-submission-handler.js"></script>
+	
 	</body>
 </html>
